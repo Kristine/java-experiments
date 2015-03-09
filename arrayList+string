@@ -1,0 +1,33 @@
+/**
+ * Created by K on 2/23/2015.
+ * determines if 2 strings match, and where they differ
+ */
+import java.util.ArrayList;
+public class FileAnalysis {
+    public static void main(String[] args) {
+        ArrayList a1 = new ArrayList();
+        ArrayList a2 = new ArrayList();
+        String s1 = "atcgtcgggttaaccgtttac";
+        String s2 = "tcgtcgggttaaccgtttacc";
+
+        // Populating the ArrayLists a1 and a2 from Strings s1 and s2
+        for (int i =0; i < s1.length() ; i++ ) {
+            a1.add(s1.substring(i, i+1));
+            a2.add(s2.substring(i, i+1));
+            }
+
+        for (int i =0; i < s1.length() ; i++ ) {
+            String s3 = s2.substring(i, i+1);
+            String s4 = s1.substring(i, i+1);
+            Boolean boo1 = s3.equals(s4);
+
+            if (boo1) {
+            }
+            else {
+                a2.set(i, "_");
+            }
+        }
+        System.out.println(a1);
+        System.out.println(a2);
+        }
+    }
